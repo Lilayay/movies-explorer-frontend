@@ -1,0 +1,112 @@
+.movies-card {
+    border-radius: 6px;
+    box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.08);
+}
+
+.movies__container {
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.movies__info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-bottom: 18px;
+}
+
+.movies__name {
+    width: 240px;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 18px;
+}
+
+.movies__duration {
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 18px;
+    color: #a0a0a0;
+    margin-left: 14px;
+}
+
+.movies__image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.movies__save-btn {
+    display: flex;
+    align-self: center;
+    align-items: center;
+    justify-content: center;
+    margin-top: 18px;
+    background: #f9f9f9;
+    border: 0;
+    border-radius: 30px;
+    text-align: center;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 11px;
+    width: 100px;
+    height: 29px;
+    cursor: pointer;
+}
+
+.movies__save-btn:hover {
+    opacity: 0.8;
+}
+
+.movies__save-btn_active {
+    width: 100px;
+    height: 29px;
+    display: flex;
+    align-self: center;
+    align-items: center;
+    justify-content: center;
+    margin-top: 18px;
+    background: #f9f9f9;
+    border: 0;
+    font-size: 0;
+    border-radius: 30px;
+    background: #ff4062;
+    background-image: url(../../images/saved.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.movies__delete-btn {
+    width: 100px;
+    height: 29px;
+    display: flex;
+    align-self: center;
+    align-items: center;
+    justify-content: center;
+    margin-top: 18px;
+    background: #f9f9f9;
+    background-image: url("../../images/delete.svg");
+    border: 0;
+    border-radius: 30px;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.movies__delete-btn:hover {
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+@media screen and (max-width: 1080px) {
+    .movies__image {
+        height: 190px;
+    }
+}
+
+@media screen and (max-width: 620px) {
+    .movies__image {
+        height: 168px;
+    }
+}
