@@ -22,7 +22,7 @@ function Header() {
     return (
         <>
             {!isLoggedIn ? (
-                <header className="header">
+                <header className="header" id="header">
                     <Link to="/" className="authorization__logo">
                         <img src={logo} alt="Логотип" />
                     </Link>
