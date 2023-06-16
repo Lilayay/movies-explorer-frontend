@@ -1,6 +1,5 @@
 import React from "react";
 import "./Portfolio.css";
-import link from "../../images/link.svg";
 
 function Portfolio() {
   return (
@@ -9,7 +8,7 @@ function Portfolio() {
       <nav className="portfolio__links">
         <a
           href="https://github.com/Lilayay/how-to-learn"
-          className="portfolio__link portfolio__link-underlined"
+          className="portfolio__link portfolio__link_underlined"
           target="_blank"
           rel="noreferrer"
         >
@@ -18,7 +17,7 @@ function Portfolio() {
         </a>
         <a
           href="https://github.com/Lilayay/russian-travel"
-          className="portfolio__link portfolio__link-underlined"
+          className="portfolio__link portfolio__link_underlined"
           target="_blank"
           rel="noreferrer"
         >

@@ -1,10 +1,10 @@
-.notfound {
+.not-found {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.notfound__error {
+.not-found__error {
     margin-top: 246px;
     text-align: center;
     font-weight: 400;
@@ -12,7 +12,7 @@
     line-height: 169px;
 }
 
-.notfound__text {
+.not-found__text {
     margin-top: 5px;
     text-align: center;
     font-weight: 400;
@@ -20,7 +20,7 @@
     line-height: 19px;
 }
 
-.notfound__back {
+.not-found__back {
     text-decoration: none;
     color: #000000;
     margin-top: 184px;
@@ -31,35 +31,35 @@
     line-height: 17px;
 }
 
-.notfound__back:hover {
+.not-found__back:hover {
     opacity: 0.8;
     cursor: pointer;
 }
 
 @media screen and (max-width: 1080px) {
-    .notfound__error {
+    .not-found__error {
         margin-top: 408px;
     }
 
-    .notfound__back {
+    .not-found__back {
         margin-bottom: 222px;
     }
 }
 
 @media screen and (max-width: 620px) {
-    .notfound__error {
+    .not-found__error {
         margin-top: 329px;
         font-size: 80px;
         line-height: 97px;
     }
 
-    .notfound__text {
+    .not-found__text {
         margin-top: 10px;
         font-size: 12px;
         line-height: 15px;
     }
 
-    .notfound__back {
+    .not-found__back {
         margin-top: 284px;
         margin-bottom: 30px;
         font-size: 12px;

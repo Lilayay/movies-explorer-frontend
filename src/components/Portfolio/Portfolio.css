@@ -30,7 +30,7 @@
     cursor: pointer;
 }
 
-.portfolio__link-underlined {
+.portfolio__link_underlined {
     border-bottom: 1px solid #e8e8e8;
     padding-bottom: 19px;
 }

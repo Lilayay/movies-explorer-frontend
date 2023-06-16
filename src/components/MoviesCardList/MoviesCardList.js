@@ -21,8 +21,8 @@ function MoviesCardList({ cards, isSavedMovies }) {
                             />
                         ))}
                     </ul>
-                    <div className="cards__btn-container">
-                        {isSavedMovies ? "" : <button className="cards__btn">Ещё</button>}
+                    <div className="cards__button-container">
+                        {isSavedMovies ? "" : <button className="cards__button">Ещё</button>}
                     </div>
                 </>
             )}

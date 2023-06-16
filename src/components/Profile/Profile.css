@@ -48,13 +48,17 @@
     line-height: 13px;
 }
 
+.profile__input:focus {
+    background-color: rgba(255, 64, 98, 0.1);
+}
+
 .profile__line {
     margin-top: 16px;
     margin-bottom: 17px;
     border-bottom: 1px solid #e8e8e8;
 }
 
-.profile__btn-change {
+.profile__button {
     border: none;
     color: #000000;
     background-color: transparent;
@@ -90,7 +94,7 @@
         margin-bottom: 96px;
     }
 
-    .profile__btn-change {
+    .profile__button {
         margin-top: 193px;
     }
 }
@@ -104,7 +108,7 @@
         margin-bottom: 80px;
     }
 
-    .profile__btn-change {
+    .profile__button {
         margin-top: 379px;
         font-size: 12px;
         line-height: 15px;

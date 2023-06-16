@@ -10,13 +10,10 @@ function Form({ title, button, question, text, link, children }) {
                 <img src={logo} alt="Логотип" />
             </Link>
             <h3 className="authorization__title">{title}</h3>
-            <form className="form">
-                {children}
-                
-            </form>
-            <button className="authorization__btn" type="submit">
-                    {button}
-                </button>
+            <form className="form">{children}</form>
+            <button className="authorization__button" type="submit">
+                {button}
+            </button>
             <p className="authorization__text">
                 {question}
                 <Link to={link} className="authorization__link">

@@ -8,7 +8,7 @@ function SearchForm() {
             <form className="search__form">
                 <label className="search__label" htmlFor="search-label"></label>
                 <input className="search__input" id="search-input" type="text" placeholder="Фильм"></input>
-                <button className="search__btn"></button>
+                <button className="search__button"></button>
             </form>
             <FilterCheckbox />
         </section>

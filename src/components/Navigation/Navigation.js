@@ -8,7 +8,7 @@ function Navigation({ handleClose }) {
         <div className="menu__overlay">
             <div onClick={handleClose} className="menu__container-hidden"></div>
             <div className="menu__container">
-                <button className="menu__close-btn" onClick={handleClose}></button>
+                <button className="menu__close-button" onClick={handleClose}></button>
                 <nav className="menu__content">
                     <Link to="/" onClick={handleClose} className="menu__link">
                         Главная
@@ -22,7 +22,7 @@ function Navigation({ handleClose }) {
                 </nav>
                 <Link to="/profile" className="menu__profile" onClick={handleClose}>
                     Аккаунт
-                    <div className="menu__profile-logo-wrap">
+                    <div className="menu__profile-wrap">
                         <img
                             className="menu__profile-logo"
                             src={profile}

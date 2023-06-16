@@ -4,7 +4,6 @@
 }
 
 .movies__container {
-    padding: 18px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -14,10 +13,13 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding-bottom: 18px;
+    padding: 18px;
 }
 
 .movies__name {
+    padding: 0;
+    margin: 0;
+    font-style: normal;
     width: 240px;
     font-weight: 500;
     font-size: 15px;
@@ -25,6 +27,9 @@
 }
 
 .movies__duration {
+    width: 70px;
+    white-space: nowrap;
+    text-align: right;
     font-weight: 400;
     font-size: 13px;
     line-height: 18px;
@@ -38,7 +43,7 @@
     object-fit: cover;
 }
 
-.movies__save-btn {
+.movies__save-button {
     display: flex;
     align-self: center;
     align-items: center;
@@ -54,31 +59,22 @@
     width: 100px;
     height: 29px;
     cursor: pointer;
+    margin-bottom: 18px;
 }
 
-.movies__save-btn:hover {
+.movies__save-button:hover {
     opacity: 0.8;
 }
 
-.movies__save-btn_active {
-    width: 100px;
-    height: 29px;
-    display: flex;
-    align-self: center;
-    align-items: center;
-    justify-content: center;
-    margin-top: 18px;
-    background: #f9f9f9;
-    border: 0;
+.movies__save-button_active {
     font-size: 0;
-    border-radius: 30px;
     background: #ff4062;
     background-image: url(../../images/saved.svg);
     background-position: center;
     background-repeat: no-repeat;
 }
 
-.movies__delete-btn {
+.movies__delete-button {
     width: 100px;
     height: 29px;
     display: flex;
@@ -86,6 +82,7 @@
     align-items: center;
     justify-content: center;
     margin-top: 18px;
+    margin-bottom: 18px;
     background: #f9f9f9;
     background-image: url("../../images/delete.svg");
     border: 0;
@@ -94,7 +91,7 @@
     background-repeat: no-repeat;
 }
 
-.movies__delete-btn:hover {
+.movies__delete-button:hover {
     cursor: pointer;
     opacity: 0.8;
 }
@@ -109,4 +106,19 @@
     .movies__image {
         height: 168px;
     }
+
+    .movies__name_saved {
+        font-weight: 700;
+    }
+
+    .movies__save-button {
+        margin-top: 14px;
+        margin-bottom: 14px;
+    } 
+
+    .movies__delete-button {
+        margin-top: 14px;
+        margin-bottom: 14px;
+    } 
+
 }

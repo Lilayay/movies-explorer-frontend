@@ -31,6 +31,7 @@ function Login() {
                     className="authorization__input"
                     id="password-input"
                     type="password"
+                    required
                 />
                 <span className="authorization__input-error">
                     Что-то пошло не так...

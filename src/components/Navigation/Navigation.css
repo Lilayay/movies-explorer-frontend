@@ -31,7 +31,7 @@
         flex: 1 1 auto;
     }
 
-    .menu__close-btn {
+    .menu__close-button {
         position: absolute;
         top: 22px;
         right: 22px;
@@ -44,7 +44,7 @@
         background-color: transparent;
     }
 
-    .menu__close-btn:hover {
+    .menu__close-button:hover {
         cursor: pointer;
         opacity: 0.8;
     }
@@ -92,7 +92,7 @@
         opacity: 0.6;
     }
 
-    .menu__profile-logo-wrap {
+    .menu__profile-wrap {
         width: 26px;
         height: 26px;
         background-color: #f9f9f9;
@@ -115,7 +115,7 @@
         width: 100%;
     }
 
-    .menu__container-empty {
+    .menu__container-hidden  {
         display: none;
     }
 

@@ -34,17 +34,23 @@
     line-height: 34px;
 }
 
-.search__btn {
-    border: none;
-    background-color: transparent;
+.search__input:focus{
+    background-color: rgba(255, 64, 98, 0.1);
+    border-radius: 17px;
+}
+
+.search__button {
+    border: 0;
+    background-color: #000000;
     background-image: url("../../images/search-black.svg");
-    width: 80px;
+    width: 34px;
     height: 34px;
-    background-position: right;
+    border-radius: 50%;
+    background-position: center;
     background-repeat: no-repeat;
 }
 
-.search__btn:hover {
+.search__button:hover {
     cursor: pointer;
     opacity: 0.8;
 }

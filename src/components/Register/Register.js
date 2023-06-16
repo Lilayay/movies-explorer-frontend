@@ -46,6 +46,7 @@ function Register() {
                     name="password"
                     id="password-input"
                     type="password"
+                    required
                 />
                 <span className="authorization__input-error">
                     Что-то пошло не так...

@@ -31,7 +31,7 @@ function Profile() {
                         required
                     />
                 </label>
-                <button className="profile__btn-change" type="submit">
+                <button className="profile__button" type="submit">
                     Редактировать
                 </button>
                 <button className="profile__exit">Выйти из аккаунта</button>
