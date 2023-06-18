@@ -4,7 +4,7 @@ import "./Profile.css";
 function Profile() {
     return (
         <section className="profile">
-            <h3 className="profile__title">Привет, Виталий!</h3>
+            <h3 className="profile__title">Привет, Лилия!</h3>
             <form className="profile__info">
                 <label className="profile__label" htmlFor="name-input">
                     Имя
@@ -15,6 +15,7 @@ function Profile() {
                         type="text"
                         minLength="2"
                         maxLength="30"
+                        placeholder="Лилия"
                         required
                     />
                 </label>
@@ -28,6 +29,7 @@ function Profile() {
                         name="email"
                         id="email-input"
                         type="text"
+                        placeholder="email@email.com"
                         required
                     />
                 </label>

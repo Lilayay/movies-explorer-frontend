@@ -18,6 +18,7 @@ function Login() {
                     className="authorization__input"
                     id="email-input"
                     type="text"
+                    placeholder="email@email.com"
                     required
                 />
                 <span className="authorization__input-error">
