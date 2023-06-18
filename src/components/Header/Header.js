@@ -23,7 +23,7 @@ function Header() {
         <>
             {!isLoggedIn ? (
                 <header className="header" id="header">
-                    <Link to="/" className="authorization__logo">
+                    <Link to="/" className="header__logo">
                         <img src={logo} alt="Логотип" />
                     </Link>
                     <div className="header__container">
@@ -37,7 +37,7 @@ function Header() {
                 </header>
             ) : (
                 <header className="header">
-                    <Link to="/" className="authorization__logo">
+                    <Link to="/" className="header__logo">
                         <img src={logo} alt="Логотип" />
                     </Link>
                     <div className="header__container">
