@@ -1,0 +1,121 @@
+.profile {
+    padding: 74px 0 70px 0;
+    max-width: 410px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+.profile__title {
+    margin: 0;
+    padding: 0;
+    margin-bottom: 123px;
+    text-align: center;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 29px;
+}
+
+.profile__info {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.profile__label {
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 14px;
+    font-weight: 500;
+    font-size: 11px;
+    line-height: 13px;
+    align-items: center;
+}
+
+.profile__input {
+    border: none;
+    outline: none;
+    margin: 0;
+    padding: 0;
+    width: 410px;
+    text-align: right;
+    font-weight: 400;
+    font-size: 11px;
+    line-height: 13px;
+}
+
+.profile__input:focus {
+    background-color: rgba(255, 64, 98, 0.1);
+}
+
+.profile__line {
+    margin-top: 16px;
+    margin-bottom: 17px;
+    border-bottom: 1px solid #e8e8e8;
+}
+
+.profile__button {
+    border: none;
+    color: #000000;
+    background-color: transparent;
+    min-height: 16px;
+    margin-top: 220px;
+    text-align: center;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 16px;
+    cursor: pointer;
+}
+
+.profile__exit {
+    border: none;
+    background-color: transparent;
+    margin-top: 16px;
+    min-height: 16px;
+    text-align: center;
+    color: #ff4062;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 16px;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 1080px) {
+    .profile {
+        padding-top: 236px;
+        padding-bottom: 269px;
+    }
+
+    .profile__title {
+        margin-bottom: 96px;
+    }
+
+    .profile__button {
+        margin-top: 193px;
+    }
+}
+
+@media screen and (max-width: 620px) {
+    .profile {
+        padding: 70px 30px 40px 30px;
+    }
+
+    .profile__title {
+        margin-bottom: 80px;
+    }
+
+    .profile__button {
+        margin-top: 379px;
+        font-size: 12px;
+        line-height: 15px;
+    }
+
+    .profile__exit {
+        font-size: 12px;
+        line-height: 15px;
+    }
+}
