@@ -2,6 +2,7 @@
     padding: 64px 70px 48px;
     display: flex;
     flex-direction: column;
+    position: relative;
 }
 
 .search__form {
@@ -11,6 +12,17 @@
     padding-bottom: 15px;
     margin-bottom: 30px;
     border-bottom: 1px solid #e8e8e8;
+}
+
+.search__form-error {
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    text-align: center;
+    color: #ff4062;
+    font-weight: 400;
+    font-size: 11px;
+    line-height: 13px;
 }
 
 .search__label {
@@ -34,7 +46,7 @@
     line-height: 34px;
 }
 
-.search__input:focus{
+.search__input:focus {
     background-color: rgba(255, 64, 98, 0.1);
     border-radius: 17px;
 }

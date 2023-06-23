@@ -45,6 +45,7 @@
     line-height: 17px;
     text-align: center;
     cursor: pointer;
+    position: relative;
 }
 
 .authorization__button:hover {
@@ -57,12 +58,21 @@
     border: 1px solid #f8f8f8;
     color: #c2c2c2;
     box-sizing: border-box;
+    pointer-events: none;
 }
 
-.authorization__button_loading {
-    pointer-events: none;
-    opacity: 0.8;
+.authorization__message {
+    margin: 0 auto;
+    padding: 0;
+    padding-top: 49px;
+    margin-bottom: -49px;
+    text-align: center;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 12px;
+    color: #ff4062;
 }
+
 
 .authorization__text {
     margin: 0;
@@ -169,6 +179,11 @@
         margin-top: 157px;
     }
 
+    .authorization__message {
+        padding-top: 137px;
+        margin-bottom: -137px;
+    }
+    
     .authorization__text {
         padding-top: 14px;
         font-size: 12px;

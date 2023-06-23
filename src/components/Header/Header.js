@@ -6,9 +6,7 @@ import logo from "../../images/logo.svg";
 import profile from "../../images/profile-icon.svg";
 import burger from "../../images/burger-menu.svg";
 
-const isLoggedIn = true;
-
-function Header() {
+function Header({ isLoggedIn }) {
     const [isOpen, setisOpen] = useState(false);
 
     function handleOpen() {
@@ -36,7 +34,7 @@ function Header() {
                     </div>
                 </header>
             ) : (
-                <header className="header">
+                <header className="header" id="header">
                     <Link to="/" className="header__logo">
                         <img src={logo} alt="Логотип" />
                     </Link>

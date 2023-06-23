@@ -1,8 +1,30 @@
 import React from "react";
 import "./MoviesCard.css";
+import { durationConverter } from "../../utils/utils";
 
-function MoviesCard({ card, isSavedMovies }) {
-    const movieSaveButton = `${card.isSaved ? "movies-card__save-button movies-card__save-button_active" : "movies-card__save-button"
+function MoviesCard({
+    card,
+    isSavedMovies,
+    handleSaveMovie,
+    handleDeleteMovie,
+    saved,
+    savedMovies
+}) {
+    function onSaveMovie() {
+        if (saved) {
+            handleDeleteMovie(savedMovies.filter((m) => m.movieId === card.id)[0]);
+        } else {
+            handleSaveMovie(card);
+        }
+    }
+
+    function onDelete() {
+        handleDeleteMovie(card);
+    }
+
+    const movieSaveButton = `${saved
+        ? "movies-card__save-button movies-card__save-button_active"
+        : "movies-card__save-button"
         }`;
 
     return (
@@ -10,19 +32,31 @@ function MoviesCard({ card, isSavedMovies }) {
             <div className="movies-card__container">
                 <div className="movies-card__info">
                     {isSavedMovies ? (
-                        <h2 className="movies-card__name movies-card__name_saved">{card.nameRu}</h2>
+                        <h2 className="movies-card__name movies-card__name_saved">
+                            {card.nameRU}
+                        </h2>
                     ) : (
-                        <h2 className="movies-card__name">{card.nameRu}</h2>
+                        <h2 className="movies-card__name">{card.nameRU}</h2>
                     )}
 
-
-                    <span className="movies-card__duration">{card.duration}</span>
+                    <span className="movies-card__duration">{durationConverter(card.duration)}</span>
                 </div>
-                <img className="movies-card__image" alt={card.nameRu} src={card.image} />
+                <a href={card.trailerLink} target="_blank" rel="noreferrer">
+                    <img
+                        className="movies-card__image"
+                        alt={card.nameRU}
+                        src={
+                            isSavedMovies
+                                ? card.image
+                                : `https://api.nomoreparties.co/${card.image.url}`
+                        }
+                    />
+                </a>
+
                 {isSavedMovies ? (
-                    <button className="movies-card__delete-button"></button>
+                    <button className="movies-card__delete-button" onClick={onDelete}></button>
                 ) : (
-                    <button className={movieSaveButton}>Сохранить</button>
+                    <button className={movieSaveButton} onClick={onSaveMovie}>Сохранить</button>
                 )}
             </div>
         </li>

@@ -34,6 +34,7 @@
     font-size: 11px;
     line-height: 13px;
     align-items: center;
+    position: relative;
 }
 
 .profile__input {
@@ -50,6 +51,19 @@
 
 .profile__input:focus {
     background-color: rgba(255, 64, 98, 0.1);
+}
+
+.profile__input-error {
+    margin: 0;
+    padding: 0;
+    text-align: right;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 12px;
+    color: #ff4062;
+    position: absolute;
+    top: 15px;
+    right: 0;
 }
 
 .profile__line {
@@ -71,6 +85,16 @@
     cursor: pointer;
 }
 
+.profile__button_inactive {
+    pointer-events: none;
+    background: #f8f8f8;
+    border: 1px solid #f8f8f8;
+    border-radius: 6px;
+    color: #c2c2c2;
+    box-sizing: border-box;
+    pointer-events: none;
+}
+
 .profile__exit {
     border: none;
     background-color: transparent;
@@ -82,6 +106,18 @@
     font-size: 13px;
     line-height: 16px;
     cursor: pointer;
+}
+
+.profile__message {
+    margin: 0 auto;
+    padding: 0;    
+    margin-top: 200px;
+    margin-bottom: -200px;
+    text-align: center;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 12px;
+    color: #ff4062;
 }
 
 @media screen and (max-width: 1080px) {
@@ -96,6 +132,11 @@
 
     .profile__button {
         margin-top: 193px;
+    }
+
+    .profile__message {
+        margin-top: 173px;
+        margin-bottom: -173px;
     }
 }
 
@@ -112,6 +153,11 @@
         margin-top: 379px;
         font-size: 12px;
         line-height: 15px;
+    }
+
+    .profile__message {
+        margin-top: 359;
+        margin-bottom: -359px;
     }
 
     .profile__exit {
