@@ -104,7 +104,7 @@ function App() {
         if (err.includes(401)) {
           setMessage("Неверный логин или пароль");
         } else {
-          setMessage("При равторизации произошла ошибка");
+          setMessage("При авторизации произошла ошибка");
         }
       })
       .finally(() => {
