@@ -176,7 +176,7 @@ function App() {
     localStorage.removeItem("shortFilms");
     localStorage.removeItem("movieSearch");
     setMessage("");
-    navigate("/signin");
+    navigate("/");
   };
 
   return (
