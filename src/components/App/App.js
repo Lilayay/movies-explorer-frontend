@@ -36,6 +36,7 @@ function App() {
         .then((res) => {
           if (res) {
             setIsLoggedIn(true);
+            navigate({ replace: false });
           }
         })
         .catch((err) => {
