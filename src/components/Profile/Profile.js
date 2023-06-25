@@ -61,6 +61,7 @@ function Profile({ isLoggedIn, isLoading, signOut, onChangeUser, message }) {
                             onChange={handleChange}
                             value={formValue.name || ""}
                             autoComplete="on"
+                            disabled={isLoading}
                         />
                         <span className="profile__input-error">{errors.name}</span>
                     </label>
@@ -78,6 +79,7 @@ function Profile({ isLoggedIn, isLoading, signOut, onChangeUser, message }) {
                             onChange={handleChange}
                             value={formValue.email || ""}
                             autoComplete="on"
+                            disabled={isLoading}
                         />
                         <span className="profile__input-error">{errors.email}</span>
                     </label>

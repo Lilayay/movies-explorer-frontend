@@ -40,6 +40,7 @@ function Register({ onRegister, isLoading, message }) {
             onChange={handleChange}
             value={formValue.name || ""}
             autoComplete="on"
+            disabled={isLoading}
           />
           <span className="authorization__input-error">{errors.name}</span>
         </label>
@@ -54,6 +55,7 @@ function Register({ onRegister, isLoading, message }) {
             onChange={handleChange}
             value={formValue.email || ""}
             autoComplete="on"
+            disabled={isLoading}
           />
           <span className="authorization__input-error">{errors.email}</span>
         </label>
@@ -68,6 +70,7 @@ function Register({ onRegister, isLoading, message }) {
             onChange={handleChange}
             value={formValue.password || ""}
             autoComplete="on"
+            disabled={isLoading}
           />
           <span className="authorization__input-error">{errors.password}</span>
         </label>

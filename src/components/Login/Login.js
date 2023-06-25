@@ -37,6 +37,7 @@ function Login({ onLogin, isLoading, message }) {
                     value={formValue.email || ""}
                     onChange={handleChange}
                     autoComplete="on"
+                    disabled={isLoading}
                 />
                 <span className="authorization__input-error authorization__input-error_active">
                     {errors.email}
@@ -53,6 +54,7 @@ function Login({ onLogin, isLoading, message }) {
                     value={formValue.password || ""}
                     onChange={handleChange}
                     autoComplete="on"
+                    disabled={isLoading}
                 />
                 <span className="authorization__input-error authorization__input-error_active">
                     {errors.password}
