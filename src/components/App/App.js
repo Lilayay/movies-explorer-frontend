@@ -11,6 +11,7 @@ import Movies from "../Movies/Movies";
 import SavedMovies from "../SavedMovies/SavedMovies";
 
 import NotFound from "../NotFound/NotFound";
+import Preloader from "../Preloader/Preloader";
 
 import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
 import { useState, useEffect } from "react";
@@ -50,16 +51,21 @@ function App() {
         .getUserInfo()
         .then((user) => {
           setCurrentUser(user);
+          navigate({ replace: false });
         })
         .catch((err) => {
           console.log("Ошибка при загрузке данных пользователя: ", err);
         });
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isLoggedIn]);
 
+  useEffect(() => {
+    if (isLoggedIn) {
       api
         .getSavedMovies()
         .then((movies) => {
           setSavedMovies(movies.reverse());
-          navigate({ replace: false });
         })
         .catch((err) => {
           console.log("Ошибка при загрузке фильмов: ", err);
@@ -182,88 +188,94 @@ function App() {
     <CurrentUserContext.Provider value={currentUser}>
       <div className="page">
         <div className="page__context">
-          <Routes>
-            <Route
-              path="/"
-              element={
-                <>
-                  <Header isLoggedIn={isLoggedIn} />
-                  <Main />
-                  <Footer />
-                </>
-              }
-            />
-
-            <Route
-              path="/signin"
-              element={
-                isLoggedIn ? (
-                  <Navigate to="/" />
-                ) : (
-                  <Login
-                    onLogin={handleLogin}
-                    isLoading={isLoading}
-                    message={message}
-                  />
-                )
-              }
-            />
-            <Route
-              path="/signup"
-              element={
-                isLoggedIn ? (
-                  <Navigate to="/" />
-                ) : (
-                  <Register
-                    onRegister={handleSignUp}
-                    isLoading={isLoading}
-                    message={message}
-                  />
-                )
-              }
-            />
-
-            <Route
-              path="/profile"
-              element={
-                <ProtectedRoute
-                  component={Profile}
-                  isLoggedIn={isLoggedIn}
-                  signOut={handleSignOut}
-                  onChangeUser={handleChangeUser}
-                  isLoading={isLoading}
-                  message={message}
+          {isLoading ? (
+            <Preloader />
+          ) : (
+            <>
+              <Routes>
+                <Route
+                  path="/"
+                  element={
+                    <>
+                      <Header isLoggedIn={isLoggedIn} />
+                      <Main />
+                      <Footer />
+                    </>
+                  }
                 />
-              }
-            />
 
-            <Route
-              path="/movies"
-              element={
-                <ProtectedRoute
-                  component={Movies}
-                  savedMovies={savedMovies}
-                  isLoggedIn={isLoggedIn}
-                  handleSaveMovie={handleSaveMovie}
-                  handleDeleteMovie={handleDeleteMovie}
+                <Route
+                  path="/signin"
+                  element={
+                    isLoggedIn ? (
+                      <Navigate to="/" />
+                    ) : (
+                      <Login
+                        onLogin={handleLogin}
+                        isLoading={isLoading}
+                        message={message}
+                      />
+                    )
+                  }
                 />
-              }
-            />
-
-            <Route
-              path="/saved-movies"
-              element={
-                <ProtectedRoute
-                  component={SavedMovies}
-                  savedMovies={savedMovies}
-                  isLoggedIn={isLoggedIn}
-                  handleDeleteMovie={handleDeleteMovie}
+                <Route
+                  path="/signup"
+                  element={
+                    isLoggedIn ? (
+                      <Navigate to="/" />
+                    ) : (
+                      <Register
+                        onRegister={handleSignUp}
+                        isLoading={isLoading}
+                        message={message}
+                      />
+                    )
+                  }
                 />
-              }
-            />
 
-            <Route path="*" element={<NotFound />} />
-          </Routes>
+                <Route
+                  path="/profile"
+                  element={
+                    <ProtectedRoute
+                      component={Profile}
+                      isLoggedIn={isLoggedIn}
+                      signOut={handleSignOut}
+                      onChangeUser={handleChangeUser}
+                      isLoading={isLoading}
+                      message={message}
+                    />
+                  }
+                />
+
+                <Route
+                  path="/movies"
+                  element={
+                    <ProtectedRoute
+                      component={Movies}
+                      savedMovies={savedMovies}
+                      isLoggedIn={isLoggedIn}
+                      handleSaveMovie={handleSaveMovie}
+                      handleDeleteMovie={handleDeleteMovie}
+                    />
+                  }
+                />
+
+                <Route
+                  path="/saved-movies"
+                  element={
+                    <ProtectedRoute
+                      component={SavedMovies}
+                      savedMovies={savedMovies}
+                      isLoggedIn={isLoggedIn}
+                      handleDeleteMovie={handleDeleteMovie}
+                    />
+                  }
+                />
+
+                <Route path="*" element={<NotFound />} />
+              </Routes>
+            </>
+          )}
         </div>
       </div>
     </CurrentUserContext.Provider>
