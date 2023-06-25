@@ -178,7 +178,7 @@ function App() {
     localStorage.removeItem("jwt");
     localStorage.removeItem("allMovies");
     localStorage.removeItem("movies");
-    localStorage.removeItem("shortFilms");
+    localStorage.removeItem("shortFilm");
     localStorage.removeItem("movieSearch");
     setMessage("");
     navigate("/signin");
