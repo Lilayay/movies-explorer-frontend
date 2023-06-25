@@ -12,7 +12,7 @@ function MoviesCard({
 }) {
     function onSaveMovie() {
         if (saved) {
-            handleDeleteMovie(savedMovies.filter((m) => m.movieId === card.id)[0]);
+            handleDeleteMovie(savedMovies.filter((item) => item.movieId === card.id)[0]);
         } else {
             handleSaveMovie(card);
         }
