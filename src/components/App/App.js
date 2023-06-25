@@ -35,7 +35,6 @@ function App() {
         .then((res) => {
           if (res) {
             setIsLoggedIn(true);
-            navigate("/movies");
           }
         })
         .catch((err) => {
@@ -60,7 +59,7 @@ function App() {
         .getSavedMovies()
         .then((movies) => {
           setSavedMovies(movies.reverse());
-          navigate("/movies");
+          navigate({ replace: false });
         })
         .catch((err) => {
           console.log("Ошибка при загрузке фильмов: ", err);
