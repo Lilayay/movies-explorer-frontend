@@ -124,7 +124,8 @@ function App() {
     api
       .changeUserInfo(data)
       .then((data) => {
-        setCurrentUser(data);
+        setCurrentUser(data);        
+        setMessage("Данные успешно сохранены");
       })
       .catch((err) => {
         if (err.includes(409)) {
