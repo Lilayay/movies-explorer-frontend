@@ -1,25 +1,18 @@
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect } from "react";
 
 const useAuthorizationForm = () => {
     const [errors, setErrors] = useState({});
     const [formValue, setFormValue] = useState({});
     const [isValid, setIsValid] = useState(false);
+    const [targetValue, setTargetValue] = useState("");
 
     const handleChange = (e) => {
-        const name = e.target.name;
-        const value = e.target.value;
-
-        setFormValue({
-            ...formValue,
-            [name]: value,
-        });
-
-        setErrors({
-            ...errors,
-            [name]: e.target.validationMessage,
-        });
-
-        setIsValid(e.target.closest("#form").checkValidity());
+        const target = e.target;
+        const name = target.name;
+        const value = target.value;
+        setFormValue({ ...formValue, [name]: value });
+        setErrors({ ...errors, [name]: target.validationMessage });
+        setTargetValue(target);
     };
 
     const resetForm = useCallback(
@@ -30,6 +23,18 @@ const useAuthorizationForm = () => {
         },
         [setFormValue, setErrors, setIsValid]
     );
+
+    const validateEmail = (email) => {
+        return String(email)
+            .toLowerCase()
+            .match(
+                /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/iu
+            );
+    };
+
+    useEffect(() => {
+        setIsValid(Boolean(formValue.email && validateEmail(formValue.email)));
+    }, [formValue, targetValue]);
 
     return {
         formValue,
