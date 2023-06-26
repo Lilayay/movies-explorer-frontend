@@ -144,7 +144,7 @@ function App() {
     api
       .postMovie(movie)
       .then((movie) => {
-        setSavedMovies([movie, ...savedMovies]);
+        setSavedMovies([movie.movies, ...savedMovies]);
       })
       .catch((err) => {
         console.log("Ошибка при сохранении фильма: ", err);
