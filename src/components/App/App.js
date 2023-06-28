@@ -183,7 +183,7 @@ function App() {
     localStorage.removeItem("shortFilm");
     localStorage.removeItem("movieSearch");
     setMessage("");
-    navigate("/signin");
+    navigate("/");
   };
 
   return (
