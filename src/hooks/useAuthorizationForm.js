@@ -1,10 +1,9 @@
-import { useState, useCallback, useEffect } from "react";
+import { useState, useCallback } from "react";
 
 const useAuthorizationForm = () => {
     const [errors, setErrors] = useState({});
     const [formValue, setFormValue] = useState({});
     const [isValid, setIsValid] = useState(false);
-    const [targetValue, setTargetValue] = useState("");
 
     const handleChange = (e) => {
         const target = e.target;
@@ -12,7 +11,10 @@ const useAuthorizationForm = () => {
         const value = target.value;
         setFormValue({ ...formValue, [name]: value });
         setErrors({ ...errors, [name]: target.validationMessage });
-        setTargetValue(target);
+        setIsValid(
+            Boolean(formValue.email && validateEmail(formValue.email)) &&
+            e.target.closest("form").checkValidity()
+        );
     };
 
     const resetForm = useCallback(
@@ -31,10 +33,6 @@ const useAuthorizationForm = () => {
                 /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/iu
             );
     };
-
-    useEffect(() => {
-        setIsValid(Boolean(formValue.email && validateEmail(formValue.email)));
-    }, [formValue, targetValue]);
 
     return {
         formValue,
